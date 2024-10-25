@@ -15,17 +15,19 @@ sequence_length = len(sequence)
 
 #find the percentage of A's and T's in the sequence
 a_t_percentage = (a_t_total/sequence_length)*100
-print("The percentage of A's and T's in the provided sequence is", a_t_percentage)
+print("The percentage of A's and T's in the provided sequence is", str(int(a_t_percentage)), "percent")
 
 #Use find and replace to replace all A's with T's, T's with A's, C's with G's, and G's with C's
 #We are converting to lowercase letter so that next steps don't interfere with already replaced letters
+#You can also do this in one line
+#print("The complement sequence is", my_dna.replace('A', 't').replace('T','a').replace('G','c').replace('C','g').upper())
 Seq1 = sequence.replace("A","t")
 Seq2 = Seq1.replace("T","a")
 Seq3 = Seq2.replace("C","g")
 Seq4 = Seq3.replace("G","c")
 
 #print as upper case
-print(Seq4.upper())
+print("The complement sequence is", Seq4.upper())
 
 motif = "AATTC"
 
@@ -33,9 +35,12 @@ motif = "AATTC"
 cut_site = sequence.find(motif)
 #print(cut_site)
 
+#Take a DNA sequence and work out the fragment sizes when digested with EcoRI
 splice1 = sequence[0:cut_site]
 splice2 = sequence[cut_site:len(sequence)]
+
 #print(splice2)
 #print("First fragment has sequence", splice1, \
 #        "Second fragment has sequence", splice2) 
+
 print("The length of the second fragment is", len(splice2))
