@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import os
 os.chdir("/localdisk/home/s2760053/Exercises/Lecture12")
 
