@@ -1,0 +1,5 @@
+### Kmer analysis
+#SQ ttagatcctgaacgtgaacgcacggatttagatcctgaacgtgaacgcacggat
+#KMER 2
+#MIN 2
+
