@@ -19,6 +19,9 @@ gencode = {
 'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
 'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W'}
 
+#Sequence of interest
+sequence = "ATGTTCGGTCTCGAGACTTAGGCTC"
+
 #split the sequence into open reading frames, starting at the 1st, 2nd, and 3rd base
 def frames(sequence):
     len_sequence = len(sequence)
@@ -46,16 +49,43 @@ def convert(sequence,start_positions):
     #print(aminoacids)
     return aminoacids
 
+#create reverse complement of the sequence
+def reverse(seq):
+    reverse = seq[::-1]
+    v1 = reverse.replace("A","t")
+    v2 = v1.replace("T","a")
+    v3 = v2.replace("C","g")
+    v4 = v3.replace("G","c")
+    final = v4.upper()
+    return final
+
 #these 3 open reading frames are given as 3 lists of starting values
-win1, win2, win3 = frames("ATGTTCGGT")
+win1, win2, win3 = frames(sequence)
 
 #give amino acid sequence for each open reading frame
-orf1 = convert("ATGTTCGGT",win1)
+orf1 = convert(sequence,win1)
 print("Open reading frame 1 has the amino acid sequence: " + " ".join(orf1))
 
-orf2 = convert("ATGTTCGGT",win2)
+orf2 = convert(sequence,win2)
 print("Open reading frame 2 has the amino acid sequence: " + " ".join(orf2))
 
-orf3 = convert("ATGTTCGGT",win3)
+orf3 = convert(sequence,win3)
 print("Open reading frame 3 has the amino acid sequence: " + " ".join(orf3))
+
+#give reverse complement sequence
+rev_seq = reverse(sequence)
+print("The reverse complement of the sequence is", rev_seq)
+
+#find open reading frames for the reverse sequence
+win4, win5, win6 = frames(rev_seq)
+
+#give amino acid sequence for each of the reverse open reading frames
+orf4 = convert(rev_seq,win4)
+print("Open reading frame 4 has the amino acid sequence: " + " ".join(orf4))
+
+orf5 = convert(rev_seq,win5)
+print("Open reading frame 5 has the amino acid sequence: " + " ".join(orf5))
+
+orf6 = convert(rev_seq,win6)
+print("Open reading frame 6 has the amino acid sequence: " + " ".join(orf6))
 
