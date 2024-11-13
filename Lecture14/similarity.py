@@ -22,7 +22,7 @@ for xaxis in list_range:
         for base in list(range(0,len(first_query))):
             if first_query[base] == next_query[base]:
                 identities += 1
-                print("Index " + str(base) + ":" + str(first_query[base]) + "," + str(next_query[base]) + "...")
+                #print("Index " + str(base) + ":" + str(first_query[base]) + "," + str(next_query[base]) + "...")
 
 
 # Calculate and print similarity percentage
