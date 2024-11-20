@@ -27,7 +27,7 @@ for acc in accessions:
         output_dict["contains d or e:"].append(acc)
     if re.search(r'de',acc):
         output_dict["contains de:"].append(acc)
-    if re.search(r'd.e', acc): #. means something
+    if re.search(r'd.*e', acc): #. means something, * means any number of somethings
         output_dict["contains d something e:"].append(acc)
     if re.search(r'd', acc) and re.search(r'e', acc):
         output_dict["contains d and e:"].append(acc)
@@ -35,7 +35,7 @@ for acc in accessions:
         output_dict["starts with x or y:"].append(acc)
     if re.search(r'^[xy]', acc) and re.search(r'e$', acc): #$ for ends with
         output_dict["starts with x or y and ends with e:"].append(acc)
-    if re.search(r'[1234567890][1234567890][1234567890]', acc):
+    if len(re.findall(r'\d',acc))==3:
         output_dict["contains 3 numbers in any order:"].append(acc)
     #find all numbers in the accession and put them in a non-redundant list
     numbers = set(re.findall(r'[1234567890]', acc))
