@@ -6,7 +6,7 @@ genomic_dna = open('genomic_dna2.txt').read().upper()
 len_dna = len(genomic_dna)
 exons = open('exons.txt').read().rsplit()
 #print(genomic_dna, exons)
-#print(exons)
+print(exons)
 
 #create and open coding_sequences.fasta and call it coding
 with open('coding_sequences.fasta','w+') as coding:

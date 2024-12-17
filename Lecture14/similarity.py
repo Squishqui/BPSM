@@ -27,8 +27,8 @@ for xaxis in list_range:
 
 # Calculate and print similarity percentage
         similarity = int(100 * (identities / len(first_query)))
-        print(f"{identities} identities between {original_list[xaxis]} and {original_list[yaxis]}")
-        print(f"\t{similarity} percent similarity between {original_list[xaxis]} and {original_list[yaxis]}")
+        print(identities,"matches between",original_list[xaxis],"and",original_list[yaxis])
+        print(similarity, "% similarity between",original_list[xaxis],"and",original_list[yaxis])
 
 
 #for seq in original_list:

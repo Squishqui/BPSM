@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-os.system('clear')
+os.system('clear') #clear the terminal window
 
 personal_info = {}
 
@@ -30,4 +30,4 @@ personal_info['flat'] = input("Is the world flat? True/False ")
 
 #print(list(personal_info.items()))
 
-evaluate(*list(personal_info.values()))
+evaluate(*list(personal_info.values())) #* to unpack the elements to pass them as separate arguements into a function
